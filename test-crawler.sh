@@ -53,10 +53,6 @@ for REPO_DIR in `find $DEV_DIR -type d -mindepth 1 -maxdepth 1`
 do
   REPO_NAME=$(basename $REPO_DIR)
   
-  if [ $REPO_NAME = "rfr-web" ]; then
-    continue
-  fi
-  
   REPO_START_TIME=`date +%s`
   printCol 30 $REPO_NAME
 
@@ -110,6 +106,7 @@ do
   echo ""
 done
 
+echo -e "--------------------------------------------------"
 
 RUNTIME=$(( `date +%s` - START_TIME ))
 
